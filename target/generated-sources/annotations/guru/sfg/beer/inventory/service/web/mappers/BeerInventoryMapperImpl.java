@@ -2,16 +2,16 @@ package guru.sfg.beer.inventory.service.web.mappers;
 
 import guru.sfg.beer.inventory.service.domain.BeerInventory;
 import guru.sfg.beer.inventory.service.domain.BeerInventory.BeerInventoryBuilder;
-import guru.sfg.brewery.model.BeerInventoryDto;
-import guru.sfg.brewery.model.BeerInventoryDto.BeerInventoryDtoBuilder;
+import guru.sfg.beer.inventory.service.web.model.BeerInventoryDto;
+import guru.sfg.beer.inventory.service.web.model.BeerInventoryDto.BeerInventoryDtoBuilder;
 import javax.annotation.processing.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-10-09T18:47:01+0200",
-    comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.20.1 (Amazon.com Inc.)"
+    date = "2023-10-09T18:58:13+0200",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 11.0.20.1 (Amazon.com Inc.)"
 )
 @Component
 public class BeerInventoryMapperImpl implements BeerInventoryMapper {
@@ -31,7 +31,6 @@ public class BeerInventoryMapperImpl implements BeerInventoryMapper {
         beerInventory.createdDate( dateMapper.asTimestamp( beerInventoryDTO.getCreatedDate() ) );
         beerInventory.lastModifiedDate( dateMapper.asTimestamp( beerInventoryDTO.getLastModifiedDate() ) );
         beerInventory.beerId( beerInventoryDTO.getBeerId() );
-        beerInventory.upc( beerInventoryDTO.getUpc() );
         beerInventory.quantityOnHand( beerInventoryDTO.getQuantityOnHand() );
 
         return beerInventory.build();
@@ -49,7 +48,6 @@ public class BeerInventoryMapperImpl implements BeerInventoryMapper {
         beerInventoryDto.createdDate( dateMapper.asOffsetDateTime( beerInventory.getCreatedDate() ) );
         beerInventoryDto.lastModifiedDate( dateMapper.asOffsetDateTime( beerInventory.getLastModifiedDate() ) );
         beerInventoryDto.beerId( beerInventory.getBeerId() );
-        beerInventoryDto.upc( beerInventory.getUpc() );
         beerInventoryDto.quantityOnHand( beerInventory.getQuantityOnHand() );
 
         return beerInventoryDto.build();
